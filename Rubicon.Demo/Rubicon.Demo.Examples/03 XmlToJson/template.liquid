@@ -1,0 +1,16 @@
+{%- assign skills = content.root.skills | Split: ", " -%}
+{
+"fullName": "{{ content.root.firstName | Append: " " | Append: content.root.lastName }}",
+"firstNameUpperCase": "{{ content.firstName | Upcase }}",
+"skills" : [
+{%- if content.root.skills != null and content.root.skills != empty -%}
+  {%- for skill in skills -%}
+    {%- if forloop.last == true -%}
+      "{{ skill }}"
+    {%- else -%}
+      "{{ skill }}",
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+]
+}

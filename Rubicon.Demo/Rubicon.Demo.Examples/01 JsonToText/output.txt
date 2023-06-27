@@ -1,0 +1,7 @@
+Jarno Gruppen
+
+  Skills:
+    - C#
+    - TypeScript
+    - DotLiquid
+
