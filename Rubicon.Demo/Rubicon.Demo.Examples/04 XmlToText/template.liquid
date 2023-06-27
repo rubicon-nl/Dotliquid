@@ -1,0 +1,15 @@
+{%- assign skills = content.root.skills | Split: ", " -%}
+<p>
+  {{ content.root.firstName | Append: " " | Append: content.root.lastName }}
+</p>
+{%- if content.root.skills != null and content.root.skills != empty -%}
+  <ul>
+    {%- for skill in skills -%}
+      <li>
+        {{ skill }}
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- else -%}
+  <div>skills unknown</div>
+{%- endif -%}
