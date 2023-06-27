@@ -1,45 +1,28 @@
 {%- assign skillList = Contact.Skills | Split: ", " -%}
-<html>
-  <head>
-    <title>Contact registration</title>
-  </head>
-  <body>
-    <p>
-      Fusce suscipit ultricies ante. Pellentesque eu justo eu felis feugiat dictum auctor et tellus.
-      Curabitur ut leo volutpat, condimentum massa nec, congue erat.
-    </p>
-    <table>
-      <tr>
-        <td>Full Name:</td>
-        <td>{{ Contact.first_name | append: " " | append: Contact.last_name }}</td>
-      </tr>
-      <tr>
-        <td>Date:</td>
-        <td>{{ DateTime | date:"yyyy-MM-dd HH:mm" }}</td>
-      </tr>
-      <tr>
-        <td>Number of skills:</td>
-        <td>{{ skillList.size }}</td>
-      </tr>
-      <tr>
-        <td>Skills:</td>
-        <td>
-          {%- for skill in skillList -%}
-            {%- if forloop.last == true -%}
-              {{ skill | append: "." }}
-            {%- else -%}
-              {{ skill | append: ", " }}
-            {%- endif -%}
-          {%- endfor -%}
-        </td>
-      </tr>
-    </table>
-    <p>
-      Etiam dolor sem, dignissim quis elementum vitae, lobortis quis ipsum.
-      Nunc tempus sagittis enim, quis convallis imperdiet urna semper non.
-      Morbi vel dignissim nunc. Proin imperdiet ornare magna vel sagittis.
-      Aliquam tristique in sem a aliquet. Ut porttitor augue non sapien posuere.
-      Nulla et accumsan tortor. Phasellus dui non bibendum lectus rhoncus quis.
-    </p>
-  </body>
-</html>
+<table>
+    <tr>
+    <td>Full Name:</td>
+    <td>{{ Contact.first_name | append: " " | append: Contact.last_name }}</td>
+    </tr>
+    <tr>
+    <td>Date:</td>
+    <td>{{ DateTime | date:"yyyy-MM-dd HH:mm" }}</td>
+    </tr>
+    <tr>
+    <td>Number of skills:</td>
+    <td>{{ skillList.size }}</td>
+    </tr>
+    <tr>
+    <td>Skills:</td>
+    <td>
+        {%- for skill in skillList -%}
+        {%- if forloop.last == true -%}
+            {{ skill | append: "." }}
+        {%- else -%}
+            {{ skill | append: ", " }}
+        {%- endif -%}
+        {%- endfor -%}
+    </td>
+    </tr>
+</table>
+
